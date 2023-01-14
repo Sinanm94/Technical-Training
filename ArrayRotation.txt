@@ -1,0 +1,23 @@
+import java.util.Arrays;
+
+public class ArrayRotation {
+
+    public static void left_rotate(int[] arr, int d) {
+        int n = arr.length;
+        d = d % n;
+        for (int i = 0; i < d; i++) {
+            int temp = arr[0];
+            for (int j = 0; j < n - 1; j++) {
+                arr[j] = arr[j + 1];
+            }
+            arr[n - 1] = temp;
+        }
+    }
+
+    public static void main(String[] args) {
+        int[] arr = {1, 2, 3, 4, 5};
+        int d = 2;
+        left_rotate(arr, d);
+        System.out.println("Original Array : " + Arrays.toString(arr));
+    }
+}
